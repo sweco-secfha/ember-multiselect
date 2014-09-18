@@ -9,6 +9,7 @@ export default Em.Component.extend({
   content: [],
   filteredRecords: [],
   displayName: 'name',
+  submitOnClose: false,
   loadRecords: function() {
     this.set('filteredRecords', this.get('content'));
   }.observes('content').on('init'),
@@ -68,6 +69,22 @@ export default Em.Component.extend({
     },
     toggleOpen: function() {
       this.set('isOpen', !this.get('isOpen'));
+      if (!this.get('isOpen') && this.get('submitOnClose')) {
+        this.send('submit');
+      }
+      // always clear selected records
+      this.get('selectedRecords').forEach(function(r) {
+        r.set('selected' ,false);
+      });
+    },
+    submit: function() {
+      this.sendAction('submit', this.get('selectedRecords'));
+    },
+    cancel: function() {
+      this.get('filteredRecords').forEach(function(r) {
+        r.set('selected', false);
+      });
+      this.set('isOpen', false);
     }
   }
 });

@@ -8,5 +8,11 @@ export default Em.Controller.extend({
     ];
   }.property(),
   pplComing: Em.A([]),
-  dropdownOpen: false
+  dropdownOpen: false,
+  actions: {
+    selectionSaved: function(selectedRecords) {
+      this.set('pplComing', selectedRecords);
+      this.set('dropdownOpen', false);
+    }
+  }
 });

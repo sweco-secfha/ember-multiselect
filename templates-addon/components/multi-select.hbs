@@ -1,7 +1,7 @@
 <div {{bind-attr class=":btn-group isOpen:open"}}>
   <button class="btn btn-default dropdown-toggle" {{action "toggleOpen"}}>{{name}} ({{selectedRecordsNum}}) <span class="caret"></span></button>
   {{#if isOpen}}
-  <div role="menu" style="width:300px;">
+  <div class="combo-box" style="width:300px;">
   {{input type="text" class="form-control" value=searchText placeholder="Type to search" autofocus="autofocus"}}
   <br/>
   <div class="toolbar">
@@ -22,6 +22,12 @@
     {{/each}}
   </tbody>
   </table>
+  {{/if}}
+  {{#if submit}}
+    <div class="actionbar">
+      <button {{action "cancel"}} type="button" class="btn btn-danger">Cancel</button>
+      <button {{action "submit"}} type="button" class="btn btn-primary">{{submitText}}</button>
+    </div>
   {{/if}}
   </div>
   {{/if}}
