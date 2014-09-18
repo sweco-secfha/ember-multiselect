@@ -1,25 +1,24 @@
 <div class="row">
   <div class="container">
-    <div class="col-md-6">
-      {{multi-select content=myList name="Invitees" selected=pplComing
+    <div class="col-md-4">
+      {{multi-select content=myList name="Invitees" selected=pplComingRT
                      displayName="showme" isOpen=dropdownOpen
-                     submit="submit" submitText="Save Selections"
-                     submitedRecords=posted}}
+                     submit="selectionSaved" submitText="Save Selections"}}
     </div>
-    <div class="col-md-6 results">
+    <div class="col-md-8 results">
       <p>Button {{#if dropdownOpen}}open{{else}}closed{{/if}}</p>
       <div>
-        <h2>People Coming</h2>
+        <h2>People Coming (realtime)</h2>
         <ul>
-        {{#each pplComing}}
+        {{#each pplComingRT}}
           <li>{{name}}</li>
         {{/each}}
         </ul>
       </div>
       <div>
-        <h2>Submitted Selections</h2>
+        <h2>People Coming (on multiselect save)</h2>
         <ul>
-        {{#each posted}}
+        {{#each pplComing}}
           <li>{{name}}</li>
         {{/each}}
         </ul>
