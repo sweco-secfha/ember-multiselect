@@ -1,51 +1,58 @@
-# Ember-cli-multiselect
+#Ember CLI Multiselect[![Build Status](https://travis-ci.org/gevious/ember-multiselect.svg)](https://travis-ci.org/gevious/ember-multiselect)
 
-This README outlines the details of collaborating on this Ember application.
-
-A short introduction of this app could easily go here.
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM) and [Bower](http://bower.io/)
+## Description
+This multiselect widget is a button that when clicked opens into a list. The 
+list can be filtered by a text search. Select/unselect all buttons are also
+available.
 
 ## Installation
+npm install ember-cli-multiselect --save-dev
+ember g ember-cli-multiselect
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+## Basic Usage
 
-## Running / Development
+  {{multi-select content=myList name="Invitees" selected=pplComing
+                 displayName="showme" isOpen=dropdownOpen
+                 submit="selectionSaved" submitText="Save Selections"}}
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+## Demo
+Check out the demo on [github pages](http://gevious.github.io/ember-multiselect/ "Ember-multiselect Demo").
+Alternatively you can clone this repo and run the app
 
-### Code Generators
+    sudo npm install -g ember-cli
+    git clone git@github.com:gevious/ember-multiselect
+    cd ember-multiselect
+    npm install; bower install
+    ember serve
 
-Make use of the many generators for code, try `ember help generate` for more details
+## Options
+When calling the the multiselect, the following options are available:
 
-### Running Tests
+### General Options
 
-* `ember test`
-* `ember test --server`
+#### isOpen
+Type: `Boolean`
 
-### Building
+This variable can be set to open/close the multiselect window, but will also
+contain the state of the window when reading it.
 
-* `ember build` (development)
-* `ember build --environment production` (production)
+#### viewLimit
+Type: `Number`
+Default: `20`
 
-### Deploying
+This is the number of list items to display.
 
-Specify what it takes to deploy your app.
 
-## Further Reading / Useful Links
+#### searchText
+Type: `String`
+Default: `""`
 
-* ember: http://emberjs.com/
-* ember-cli: http://www.ember-cli.com/
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
+This is the variable holding the search query the user inputted. Generally it
+won't be set programatically.
 
+#### submitOnClose
+Type: `Boolean`
+Default: `false`
+
+If true, the component will submit the selected list when the window is closed.
+_Note:_ All selections are lost when the window closes.

@@ -1,8 +1,6 @@
-/* global require */
-
-var Application = require('ember-cli-multiselect/app')['default'];
-var Router = require('ember-cli-multiselect/router')['default'];
 import Ember from 'ember';
+import Application from 'dummy/app';
+import Router from 'dummy/router';
 
 export default function startApp(attrs) {
   var App;

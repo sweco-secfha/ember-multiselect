@@ -1,0 +1,24 @@
+<div style="float: left; width: 400px">
+  {{multi-select content=myList name="Invitees" selected=pplComingRT
+                 displayName="showme" isOpen=dropdownOpen
+                 submit="selectionSaved" submitText="Save Selections"}}
+</div>
+<div style="float: left; margin-left: 20px">
+  <p>Button {{#if dropdownOpen}}open{{else}}closed{{/if}}</p>
+  <div>
+    <h2>People Coming (realtime)</h2>
+    <ul>
+    {{#each pplComingRT}}
+      <li>{{name}}</li>
+    {{/each}}
+    </ul>
+  </div>
+  <div>
+    <h2>People Coming (on multiselect save)</h2>
+    <ul>
+    {{#each pplComing}}
+      <li>{{name}}</li>
+    {{/each}}
+    </ul>
+  </div>
+</div>
