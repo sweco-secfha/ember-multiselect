@@ -6,14 +6,14 @@ list can be filtered by a text search. Select/unselect all buttons are also
 available.
 
 ## Installation
-npm install ember-cli-multiselect --save-dev
-ember g ember-cli-multiselect
+    npm install ember-cli-multiselect --save-dev
+    ember g ember-cli-multiselect
 
 ## Basic Usage
 
-  {{multi-select content=myList name="Invitees" selected=pplComing
-                 displayName="showme" isOpen=dropdownOpen
-                 submit="selectionSaved" submitText="Save Selections"}}
+    {{multi-select content=myList name="Invitees" selected=pplComing
+                   displayName="showme" isOpen=dropdownOpen
+                   submit="selectionSaved" submitText="Save Selections"}}
 
 ## Demo
 Check out the demo on [github pages](http://gevious.github.io/ember-multiselect/ "Ember-multiselect Demo").
