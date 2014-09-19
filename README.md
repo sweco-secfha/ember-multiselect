@@ -32,6 +32,7 @@ When calling the the multiselect, the following options are available:
 
 #### isOpen
 Type: `Boolean`
+Default: `false`
 
 This variable can be set to open/close the multiselect window, but will also
 contain the state of the window when reading it.
@@ -49,6 +50,18 @@ Default: `""`
 
 This is the variable holding the search query the user inputted. Generally it
 won't be set programatically.
+
+#### submit
+Type: `String`
+Default: `false`
+
+Populate this field with a controller action. That action will be called when the submit button is pressed. The submit button will only show if this field has been populated.
+
+#### submitText
+Type: `String`
+Default: `false`
+
+The text the submit button should have. This is only relevant if `submit` has been populated.
 
 #### submitOnClose
 Type: `Boolean`
