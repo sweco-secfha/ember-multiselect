@@ -68,4 +68,18 @@ Type: `Boolean`
 Default: `false`
 
 If true, the component will submit the selected list when the window is closed.
-_Note:_ All selections are lost when the window closes.
+
+#### clearOnClose
+Type: `Boolean`
+Default: `false`
+
+When the dropdown is closed, all selected elements remain selected. However in
+the case where they should be cleared, setting this switch will do that.
+
+
+#### showRecordNum
+Type: `Boolean`
+Default: `true`
+
+Show the number of selected records in the dropdown button. Set to false to
+hide this number.

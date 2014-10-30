@@ -1,5 +1,7 @@
 <div {{bind-attr class=":multi-select isOpen:open"}}>
-  <button class="btn btn-default dropdown-toggle" {{action "toggleOpen"}}>{{name}} ({{selectedRecordsNum}}) <span class="caret"></span></button>
+  <button class="btn btn-default dropdown-toggle" {{action "toggleOpen"}} {{bind-attr disabled="isLoading"}}>
+    {{#if isLoading}}Loading {{name}}...{{else}}
+    {{name}}{{#if showRecordNum}} ({{selectedRecordsNum}}){{/if}}{{/if}} <span class="caret"></span></button>
   {{#if isOpen}}
   <form role="form">
     <div class="combo-box form-group">

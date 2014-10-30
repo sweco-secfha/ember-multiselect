@@ -7,7 +7,20 @@ export default Em.Controller.extend({
       Em.Object.create({'name': 'you', 'showme': "Pick you"})
     ];
   }.property(),
-  pplComing: Em.A([]),
+  myPromiseList: function() {
+    var data = [
+      Em.Object.create({'name': 'red'}),
+      Em.Object.create({'name': 'green'}),
+      Em.Object.create({'name': 'blue'})
+    ];
+    return new Em.RSVP.Promise(function(resolve) {
+      Em.run.later(function() {
+        resolve(data);
+      }, 2000);
+    });
+  }.property(),
+  pplComing: [],
+  coloursSelected: [],
   dropdownOpen: false,
   actions: {
     selectionSaved: function(selectedRecords) {

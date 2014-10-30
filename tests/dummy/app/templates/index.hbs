@@ -1,6 +1,8 @@
+<h2>Static multiselect</h2>
 <div style="float: left; width: 400px; background-color: DDD; border: 1px solid black; padding: 10px">
   {{multi-select content=myList name="Invitees" selected=pplComingRT
-                 displayName="showme" isOpen=dropdownOpen
+                 displayName="showme" isOpen=dropdownOpen clearOnClose=true
+                 showRecordNum=false
                  submit="selectionSaved" submitText="Save Selections"}}
 </div>
 <div style="float: left; margin-left: 20px">
@@ -17,6 +19,25 @@
     <h2>People Coming (on multiselect save)</h2>
     <ul>
     {{#each pplComing}}
+      <li>{{name}}</li>
+    {{/each}}
+    </ul>
+  </div>
+</div>
+<div style="clear: both"></div>
+
+<h2>Promise multiselect</h2>
+<p>Selections remain if dropdown is closed</p>
+<div style="float: left; width: 400px; background-color: DDD; border: 1px solid black; padding: 10px">
+  {{multi-select content=myPromiseList name="Invitees" selected=coloursSelected
+                 displayName="name" viewLimit=2}}
+</div>
+<div style="float: left; margin-left: 20px">
+  <div>
+    <h2>Colours selected</h2>
+    <p>Note: blue is hidden because of the view limit. Search for it to find it</p>
+    <ul>
+    {{#each coloursSelected}}
       <li>{{name}}</li>
     {{/each}}
     </ul>
