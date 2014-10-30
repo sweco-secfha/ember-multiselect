@@ -1,5 +1,8 @@
 # Ember-multiselect Changelog
 
+### 1.0.4
+ * [BUGFIX] Multiple multiselects don't share the same content (#13)
+
 ### 1.0.3
  * [BUGFIX] Multiple multiselects don't share the same content
 

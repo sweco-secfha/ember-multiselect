@@ -45,16 +45,24 @@ export default Em.Component.extend({
       });
     });
   }.on('init').observes('content'),
-  filteredRecords: [],
+  /**
+   * Field name to use for display in dropdown box
+   */
   displayName: 'name',
+  /**
+   * Submit selected list to controller action
+   */
   submitOnClose: false,
+  /**
+   * Clear selection when the box closes
+   */
   clearOnClose: false,
-  loadRecords: function() {
-    this.set('filteredRecords', this.get('_content'));
-  }.observes('_content'),
   selectedRecords: function() {
     return this.get('_content').filterBy('selected', true);
   }.property('_content.@each.selected'),
+  /**
+   * Update selection list which is bound to the controller for RT access
+   */
   updateSelections: function() {
     this.set('selected', this.get('selectedRecords'));
   }.observes('_content.@each.selected'),
@@ -64,8 +72,7 @@ export default Em.Component.extend({
   noRecords: function() {
     return this.get('filteredRecords.length') < 1;
   }.property('filteredRecords.@each'),
-  updateTable: function() {
-    Em.debug("Update table records");
+  filteredRecords: function() {
     var fc = this.get('_content'), sd = this.get('searchText'),
         dn = this.get('displayName');
     if (this.get('searchText').trim() !== "*") {
@@ -85,8 +92,8 @@ export default Em.Component.extend({
     if (fc.get('length') > this.get('viewLimit')) {
       fc = fc.slice(0, this.get('viewLimit'));
     }
-    this.set('filteredRecords', fc);
-  }.observes('searchText', '_content.@each'),
+    return fc;
+  }.property('searchText', '_content.@each'),
   keyUp: function(e) {
     // close box on esc key
     if (e.keyCode === 27) {
