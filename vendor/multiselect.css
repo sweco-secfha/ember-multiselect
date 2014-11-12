@@ -5,12 +5,27 @@
 
 .combo-box {
     position: absolute;
+    text-align: left;
     top: 37px;
     min-width: 250px;
     padding: 10px;
     border: 1px solid black;
     background-color: #FFF;
     z-index: 100;
+}
+
+.combo-box {
+    left: 0;
+    border: 1px solid #ddd;
+}
+
+.combo-box input[type="text"] {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.combo-box .toolbar button {
+    width: 49%;
 }
 
 /* styles from bootstrap included until we do our own */
