@@ -1,4 +1,4 @@
-#Ember CLI Multiselect[![Build Status](https://travis-ci.org/gevious/ember-multiselect.svg)](https://travis-ci.org/gevious/ember-multiselect)
+#Ember CLI Multiselect[![Build Status](https://travis-ci.org/squirelabs/ember-multiselect.svg)](https://travis-ci.org/squirelabs/ember-multiselect)
 
 ## Description
 This multiselect widget is a button that when clicked opens into a list. The 
@@ -16,11 +16,11 @@ available.
                    submit="selectionSaved" submitText="Save Selections"}}
 
 ## Demo
-Check out the demo on [github pages](http://gevious.github.io/ember-multiselect/ "Ember-multiselect Demo").
+Check out the demo on [github pages](http://squirelabs.github.io/ember-multiselect/ "Ember-multiselect Demo").
 Alternatively you can clone this repo and run the app
 
     sudo npm install -g ember-cli
-    git clone git@github.com:gevious/ember-multiselect
+    git clone git@github.com:squirelabs/ember-multiselect
     cd ember-multiselect
     npm install; bower install
     ember serve
