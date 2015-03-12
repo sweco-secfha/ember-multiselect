@@ -24,10 +24,6 @@
     margin-bottom: 10px;
 }
 
-.combo-box .toolbar button {
-    width: 49%;
-}
-
 /* styles from bootstrap included until we do our own */
 
 .btn {
@@ -282,4 +278,12 @@ a.label:focus {
 }
 .dropdown-toggle:focus {
   outline: 0;
+}
+.toolbar {
+  margin-left: -5px;
+  float: left;
+  margin-bottom: 10px;
+}
+.toolbar > .btn {
+  margin-left: 5px;
 }
