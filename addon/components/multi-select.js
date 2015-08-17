@@ -68,10 +68,10 @@ export default Em.Component.extend({
   }.observes('_content.@each.selected'),
   selectedRecordsNum: function() {
     return this.get('selectedRecords.length');
-  }.property('selectedRecords.@each'),
+  }.property('selectedRecords.[]'),
   noRecords: function() {
     return this.get('filteredRecords.length') < 1;
-  }.property('filteredRecords.@each'),
+  }.property('filteredRecords.[]'),
   filteredRecords: function() {
     var fc = this.get('_content'), sd = this.get('searchText'),
         dn = this.get('displayName');
@@ -93,7 +93,7 @@ export default Em.Component.extend({
       fc = fc.slice(0, this.get('viewLimit'));
     }
     return fc;
-  }.property('searchText', '_content.@each'),
+  }.property('searchText', '_content.[]'),
   keyUp: function(e) {
     // close box on esc key
     if (e.keyCode === 27) {
