@@ -135,7 +135,6 @@ export default Em.Component.extend({
       records.forEach(function(r) {
         r.set('selected', true);
       });
-      this.updateTable();
     },
     deselectAll: function() {
       this.get('selectedRecords').forEach(function(r) {
